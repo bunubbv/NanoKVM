@@ -9,153 +9,186 @@ const ko = {
     },
     auth: {
       login: '로그인',
-      placeholderUsername: '사용자 이름을 입력하세요.',
-      placeholderPassword: '비밀번호를 입력하세요.',
-      placeholderPassword2: '비밀번호를 다시 입력하세요.',
-      noEmptyUsername: '사용자 이름은 비어있을 수 없습니다.',
-      noEmptyPassword: '비밀번호는 비어있을 수 없습니다.',
-      noAccount: '사용자 정보를 불러오는 데 실패했습니다. 페이지를 새로고침하거나 비밀번호를 초기화하세요.',
-      invalidUser: '사용자 이름이나 비밀번호가 틀렸습니다.',
+      placeholderUsername: '사용자명',
+      placeholderPassword: '비밀번호',
+      placeholderPassword2: '비밀번호 확인',
+      noEmptyUsername: '사용자명을 입력하세요.',
+      noEmptyPassword: '비밀번호를 입력하세요.',
+      noAccount: '사용자 정보를 불러오지 못했습니다. 페이지를 새로고침하거나 비밀번호를 초기화하세요.',
+      invalidUser: '잘못된 사용자명 또는 비밀번호',
       error: '알 수 없는 오류',
-      changePassword: '비밀번호 변경',
-      changePasswordDesc: '보안을 위해 웹 로그인 비밀번호를 변경하세요.',
-      differentPassword: '비밀번호가 서로 일치하지 않습니다.',
-      illegalUsername: '사용자 이름에 사용할 수 없는 문자가 있습니다.',
+      changePassword: '비밀번호 변경', 
+      changePasswordDesc: '장치의 보안을 위해 비밀번호를 변경하세요!',
+      differentPassword: '비밀번호가 일치하지 않습니다.',
+      illegalUsername: '사용자명에 사용할 수 없는 문자가 있습니다.',
       illegalPassword: '비밀번호에 사용할 수 없는 문자가 있습니다.',
-      forgetPassword: '비밀번호 분실',
+      forgetPassword: '비밀번호를 잊어버렸나요?',
       ok: '확인',
-      cancel: '취소',
+      cancel: '닫기',
       loginButtonText: '로그인',
       tips: {
         reset1:
-          '비밀번호를 재설정하려면 NanoKVM의 BOOT 버튼을 10초 동안 누르고 계세요.',
-        reset2: '자세한 절차는 이 문서를 참조하세요:',
-        reset3: '웹 기본 계정:',
-        reset4: 'SSH 기본 계정:',
-        change1: '이 작업을 수행하면 다음 비밀번호가 변경됩니다:',
+          '비밀번호를 초기화하려면 NanoKVM의 BOOT 버튼을 10초 동안 누르세요.',
+        reset2: '자세한 내용은 다음 문서를 참조하세요.',
+        reset3: '웹 기본 사용자명/비밀번호:',
+        reset4: 'SSH 기본 사용자명/비밀번호:',
+        change1: '이 작업을 수행하면 다음에 해당하는 비밀번호가 변경됩니다:',
         change2: '웹 로그인 비밀번호',
-        change3: '시스템 루트 비밀번호 (SSH 로그인 비밀번호)',
-        change4: '비밀번호를 재설정하려면 NanoKVM의 BOOT 버튼을 길게 누르세요.'
+        change3: '시스템 root 비밀번호 (SSH 로그인 비밀번호)',
+        change4: '비밀번호를 초기화하려면 NanoKVM의 BOOT 버튼을 10초 동안 누르세요.'
       }
     },
     wifi: {
       title: 'Wi-Fi',
-      description: 'NanoKVM Wi-Fi 설정',
-      success: 'NanoKVM의 네트워크 상태를 확인하고 새 IP 주소로 접속하세요.',
-      failed: '작업에 실패했습니다. 다시 시도하세요.',
-      confirmBtn: '확인',
-      finishBtn: '완료'
+      description: 'Configure Wi-Fi for NanoKVM',
+      success: 'Please check the network status of NanoKVM and visit the new IP address.',
+      failed: 'Operation failed, please try again.',
+      confirmBtn: 'Ok',
+      finishBtn: 'Finished'
     },
     screen: {
+      title: '화면',
       video: '비디오 모드',
+      videoDirectTips: '이 모드를 사용하려면 "설정 > 장치"에서 HTTPS를 활성화하세요.',
       resolution: '해상도',
-      auto: '자동 설정',
+      auto: '자동',
       autoTips:
-        '일부 해상도에서는 화면이 왜곡되거나 마우스 동작이 비정상적으로 나타날 수 있습니다. 원격 컴퓨터의 해상도를 변경하거나 자동 설정 대신 수동 설정을 사용해 보세요.',
+        "Screen tearing or mouse offset may occur at specific resolutions. Consider adjusting the remote host's resolution or disable automatic mode.",
       fps: 'FPS',
-      customizeFps: 'FPS 설정',
+      customizeFps: 'Customize',
       quality: '품질',
       qualityLossless: '무손실',
       qualityHigh: '높음',
       qualityMedium: '중간',
       qualityLow: '낮음',
-      frameDetect: '프레임 탐지',
+      frameDetect: 'Frame Detect',
       frameDetectTip:
-        '프레임 간의 차이를 계산합니다. 원격 호스트 화면에 변경 사항이 감지되지 않으면 비디오 스트림 전송을 중지합니다.',
+        "Calculate the difference between frames. Stop transmitting video stream when no changes are detected on the remote host's screen.",
       resetHdmi: 'HDMI 초기화'
     },
     keyboard: {
+      title: '키보드',
       paste: '붙여넣기',
-      tips: '표준 키보드 문자 및 기호만 지원됩니다',
-      placeholder: '입력하세요',
-      submit: '전송',
+      tips: 'Only standard keyboard letters and symbols are supported',
+      placeholder: 'Please input',
+      submit: '확인',
       virtual: '키보드',
       ctrlaltdel: 'Ctrl+Alt+Del'
     },
     mouse: {
-      default: '기본 커서',
-      pointer: '포인터 커서',
-      cell: '셀 커서',
-      text: '텍스트 커서',
-      grab: '잡기 커서',
-      hide: '커서 숨기기',
-      mode: '마우스 모드',
-      absolute: '절대값 모드',
-      relative: '상대값 모드',
-      requestPointer: '상대값 모드를 사용 중입니다. 커서를 찾으려면 데스크톱을 클릭하세요.',
-      resetHid: 'HID 초기화'
+      title: '마우스',
+      cursor: 'Cursor style',
+      default: 'Default cursor',
+      pointer: 'Pointer cursor',
+      cell: 'Cell cursor',
+      text: 'Text cursor',
+      grab: 'Grab cursor',
+      hide: 'Hide cursor',
+      mode: 'Mouse mode',
+      absolute: 'Absolute mode',
+      relative: 'Relative mode',
+      speed: 'Wheel speed',
+      fast: 'Fast',
+      slow: 'Slow',
+      requestPointer: 'Using relative mode. Please click desktop to get mouse pointer.',
+      resetHid: 'Reset HID',
+      hidOnly: {
+        title: 'HID-Only mode',
+        desc: "If your mouse and keyboard stop responding and resetting HID doesn't help, it could be a compatibility issue between the NanoKVM and the device. Try to enable HID-Only mode for better compatibility.",
+        tip1: 'Enabling HID-Only mode will unmount the virtual U-disk and virtual network',
+        tip2: 'In HID-Only mode, image mounting is disabled',
+        tip3: 'NanoKVM will automatically reboot after switching modes',
+        enable: 'Enable HID-Only mode',
+        disable: 'Disable HID-Only mode'
+      }
     },
     image: {
       title: '이미지',
-      loading: '불러오는 중...',
-      empty: '아무것도 없습니다.',
-      cdrom: 'CD-ROM 모드로 이미지 마운트',
-      mountFailed: '이미지 마운트 실패',
+      loading: '로드 중...',
+      empty: '항목 없음',
+      cdrom: 'Mount the image in CD-ROM mode',
+      mountFailed: 'Mount Failed',
       mountDesc:
-        '일부 시스템에서는 이미지를 마운트하기 전에 원격 호스트에서 가상 디스크를 제거해야 합니다.',
-      refresh: '이미지 목록 새로고침',
+        "In some systems, it's necessary to eject the virtual disk on the remote host before mounting the image.",
+      refresh: 'Refresh the image list',
       tips: {
-        title: '업로드 방법',
-        usb1: 'USB를 통해 NanoKVM을 컴퓨터에 연결하세요.',
-        usb2: '가상 디스크가 마운트되었는지 확인하세요. (설정 - 가상 디스크).',
-        usb3: '컴퓨터에서 가상 디스크를 열고 이미지 파일을 가상 디스크의 루트 디렉토리로 복사하세요.',
-        scp1: 'NanoKVM과 컴퓨터가 동일한 로컬 네트워크에 있는지 확인하세요.',
-        scp2: '컴퓨터에서 터미널을 열고 SCP 명령을 사용하여 이미지 파일을 NanoKVM의 /data 디렉터리에 업로드하세요.',
-        scp3: '예시: scp [이미지 파일 경로] root@[NanoKVM IP 주소]:/data',
-        tfCard: 'TF 카드',
-        tf1: '이 방법은 Linux 시스템에서 지원됩니다',
-        tf2: 'NanoKVM에서 TF 카드를 가져옵니다(전체 버전의 경우 먼저 케이스를 분해하세요).',
-        tf3: 'TF 카드를 카드 리더기에 삽입하고 컴퓨터에 연결하세요.',
-        tf4: '이미지 파일을 TF 카드의 /data 디렉터리에 복사하세요.',
-        tf5: 'TF 카드를 NanoKVM에 삽입하세요.'
+        title: 'How to upload',
+        usb1: 'Connect the NanoKVM to your computer via USB.',
+        usb2: 'Ensure that the virtual disk is mounted (Settings - Virtual Disk).',
+        usb3: 'Open the virtual disk on your computer and copy the image file to the root directory of the virtual disk.',
+        scp1: 'Make sure the NanoKVM and your computer are on the same local network.',
+        scp2: 'Open a terminal on your computer and use the SCP command to upload the image file to the /data directory on the NanoKVM.',
+        scp3: 'Example: scp your-image-path root@your-nanokvm-ip:/data',
+        tfCard: 'TF Card',
+        tf1: 'This method is supported on Linux system',
+        tf2: 'Get TF card from the NanoKVM (for the FULL version, disassemble the case first).',
+        tf3: 'Insert the TF card into a card reader and connect it to your computer.',
+        tf4: 'Copy the image file to the /data directory on the TF card.',
+        tf5: 'Insert the TF card into the NanoKVM.'
       }
     },
     script: {
       title: '스크립트',
       upload: '업로드',
       run: '실행',
-      runBackground: '백그라운드에서 실행',
-      runFailed: '실행 실패',
-      attention: '주의',
-      delDesc: '이 파일을 정말로 삭제합니까?',
-      confirm: '네',
-      cancel: '아니오',
-      delete: '삭제',
-      close: '닫기'
+      runBackground: 'Run Background',
+      runFailed: 'Run failed',
+      attention: 'Attention',
+      delDesc: 'Are you sure you want to delete this file?',
+      confirm: 'Yes',
+      cancel: 'No',
+      delete: 'Delete',
+      close: 'Close'
     },
     terminal: {
-      title: '터미널',
-      nanokvm: 'NanoKVM 터미널',
-      serial: '시리얼 포트 터미널',
-      serialPort: '시리얼 포트',
-      serialPortPlaceholder: '시리얼 포트를 입력하세요',
+      title: 'Terminal',
+      nanokvm: 'NanoKVM Terminal',
+      serial: 'Serial Port Terminal',
+      serialPort: 'Serial Port',
+      serialPortPlaceholder: 'Please enter the serial port',
       baudrate: 'Baud rate',
-      confirm: '확인'
+      parity: 'Parity',
+      parityNone: 'None',
+      parityEven: 'Even',
+      parityOdd: 'Odd',
+      flowControl: 'Flow control',
+      flowControlNone: 'None',
+      flowControlSoft: 'Soft',
+      flowControlHard: 'Hard',
+      dataBits: 'Data bits',
+      stopBits: 'Stop bits',
+      confirm: 'Ok'
     },
     wol: {
       title: 'Wake-on-LAN',
-      sending: '패킷 전송 중...',
-      sent: '패킷 전송 완료',
-      input: 'MAC주소를 입력하세요.',
-      ok: '확인'
+      sending: 'Sending command...',
+      sent: 'Command sent',
+      input: 'Please enter the MAC',
+      ok: 'Ok'
     },
     download: {
-      title: '이미지 다운로드',
-      input: '원격 이미지 URL을 입력하세요.',
-      ok: '확인',
-      disabled: '/data 파티션이 읽기 전용(RO) 상태이므로 이미지를 다운로드할 수 없습니다.'
+      title: 'Image Downloader',
+      input: 'Please enter a remote image URL',
+      ok: 'Ok',
+      disabled: '/data partition is RO, so we cannot download the image'
     },
     power: {
       title: '전원',
+      showConfirm: '실행 전 확인',
+      showConfirmTip: 'Power operations require an extra confirmation',
       reset: '리셋',
       power: '전원',
       powerShort: '전원 (짧게 누르기)',
-      powerLong: '전원 (길게 누르기)'
+      powerLong: '전원 (길게 누르기)',
+      resetConfirm: '리셋 작업을 수행하시겠습니까?',
+      powerConfirm: '전원 작업을 수행하시겠습니까?',
+      okBtn: '예',
+      cancelBtn: '아니오'
     },
     settings: {
       title: '설정',
       about: {
-        title: 'NanoKVM 정보',
+        title: '정보',
         information: '정보',
         ip: 'IP',
         mdns: 'mDNS',
@@ -163,22 +196,31 @@ const ko = {
         applicationTip: 'NanoKVM 웹 애플리케이션 버전',
         image: '이미지 버전',
         imageTip: 'NanoKVM 시스템 이미지 버전',
-        deviceKey: '장치 키',
-        community: '커뮤니티'
+        deviceKey: 'Device Key',
+        community: '커뮤니티',
+        hostname: '호스트명',
+        hostnameUpdated: '새 호스트명을 적용하려면 재부팅하세요.',
+        ipType: {
+          Wired: '유선',
+          Wireless: '무선',
+          Other: '기타'
+        }
       },
       appearance: {
-        title: '디자인',
-        display: '표시',
+        title: '모양',
+        display: '모양',
         language: '언어',
         menuBar: '메뉴 바',
-        menuBarDesc: '메뉴 바에 아이콘을 표시'
+        menuBarDesc: 'Display icons in the menu bar',
+        webTitle: '페이지 제목',
+        webTitleDesc: 'Customize the web page title'
       },
       device: {
         title: '장치',
         oled: {
           title: 'OLED',
-          description: 'OLED 화면 자동 절전',
-          0: '사용 안 함',
+          description: 'Turn off OLED screen after',
+          0: '안 함',
           15: '15초',
           30: '30초',
           60: '1분',
@@ -190,76 +232,120 @@ const ko = {
         },
         wifi: {
           title: 'Wi-Fi',
-          description: 'Wi-Fi 설정',
-          setBtn: '설정'
+          description: 'Configure Wi-Fi',
+          setBtn: 'Config'
         },
         ssh: {
-          description: 'SSH 원격 접속 활성화',
-          tip: '활성화하기 전에 강력한 비밀번호를 설정하세요. (계정 - 비밀번호 변경)'
+          description: 'Enable SSH remote access',
+          tip: 'Set a strong password before enabling (Account - Change Password)'
         },
-        disk: '가상 디스크',
-        diskDesc: '원격 호스트에서 가상 U-디스크를 마운트합니다.',
-        network: '가상 네트워크',
-        networkDesc: '원격 호스트에서 가상 네트워크 카드를 마운트합니다.'
+        tls: {
+          description: 'Enable HTTPS protocol',
+          tip: 'Be aware: Using HTTPS can increase latency, especially with MJPEG video mode.'
+        },
+        advanced: 'Advanced Settings',
+        swap: {
+          title: '스왑 메모리',
+          disable: '비활성화',
+          description: '스왑 파일 크기 설정',
+          tip: "Enabling this feature could shorten your SD card's usable life!"
+        },
+        mouseJiggler: {
+          title: 'Mouse Jiggler',
+          description: 'Prevent the remote host from sleeping',
+          disable: 'Disable',
+          absolute: 'Absolute Mode',
+          relative: 'Relative Mode'
+        },
+        mdns: {
+          description: 'Enable mDNS discovery service',
+          tip: "Turning it off if it's not needed"
+        },
+        hdmi: {
+          description: 'Enable HDMI/monitor output'
+        },
+        hidOnly: 'HID-Only Mode',
+        disk: 'Virtual Disk',
+        diskDesc: 'Mount virtual U-disk on the remote host',
+        network: 'Virtual Network',
+        networkDesc: 'Mount virtual network card on the remote host',
+        reboot: 'Reboot',
+        rebootDesc: 'Are you sure you want to reboot NanoKVM?',
+        okBtn: 'Yes',
+        cancelBtn: 'No'
       },
       tailscale: {
         title: 'Tailscale',
         memory: {
           title: '메모리 최적화',
-          tip: '메모리 사용량이 제한을 초과하면 가비지 컬렉션이 더 적극적으로 실행되어 메모리를 확보하려고 시도합니다. Tailscale을 사용할 경우 50MB로 설정하는 것이 좋습니다. 변경 사항을 적용하려면 Tailscale을 다시 시작해야 합니다.',
+          tip: "When memory usage exceeds the limit, garbage collection is performed more aggressively to attempt to free up memory. It's recommended to set to 75MB if using Tailscale. A Tailscale restart is required for the change to take effect.",
           disable: '비활성화'
         },
-        restart: '정말로 Tailscale을 다시 시작하시겠습니까?',
-        stop: '정말로 Tailscale을 중지하시겠습니까?',
-        stopDesc: 'Tailscale에서 로그아웃하고 자동 시작을 비활성화합니다.',
-        loading: '불러오는 중...',
-        notInstall: 'Tailscale이 없습니다. 설치해주세요.',
+        restart: 'Restart Tailscale?',
+        stop: 'Stop Tailscale?',
+        stopDesc: 'Log out Tailscale and disable automatic startup on boot.',
+        loading: 'Loading...',
+        notInstall: 'Tailscale not found! Please install.',
         install: '설치',
-        installing: '설치중',
-        failed: '설치 실패',
-        retry: '새로고침하고 다시 시도하거나, 수동으로 설치하세요',
-        download: '다운로드 중 :',
-        package: '패키지 설치',
-        unzip: '압축 해제',
-        upTailscale: 'tailscale을 NanoKVM 의 다음 경로에 업로드 했습니다. : /usr/bin/',
-        upTailscaled: 'tailscaled을 NanoKVM 의 다음 경로에 업로드 했습니다. :  /usr/sbin/',
-        refresh: '현재 페이지 새로고침',
+        installing: 'Installing',
+        failed: 'Install failed',
+        retry: 'Please refresh and try again. Or try to install manually',
+        download: 'Download the',
+        package: 'installation package',
+        unzip: 'and unzip it',
+        upTailscale: 'Upload tailscale to NanoKVM directory /usr/bin/',
+        upTailscaled: 'Upload tailscaled to NanoKVM directory /usr/sbin/',
+        refresh: 'Refresh current page',
         notLogin:
-          '이 기기는 현재 연동 되지 않았습니다. 로그인해서 계정에 이 장치를 연동하세요.',
-        urlPeriod: '이 주소는 10분간 유효합니다.',
+          'The device has not been bound yet. Please login and bind this device to your account.',
+        urlPeriod: 'This url is valid for 10 minutes',
         login: '로그인',
-        loginSuccess: '로그인 성공',
+        loginSuccess: 'Login Success',
         enable: 'Tailscale 활성화',
-        deviceName: '장치 이름',
-        deviceIP: '장치 IP',
+        deviceName: '기기명',
+        deviceIP: '기기 IP',
         account: '계정',
         logout: '로그아웃',
-        logout2: '정말로 로그아웃 합니까?',
-        uninstall: 'Tailscale 제거',
-        okBtn: '네',
-        cancelBtn: '아니오'
+        logoutDesc: 'Are you sure you want to logout?',
+        uninstall: 'Uninstall Tailscale',
+        okBtn: '예',
+        cancelBtn: '아니요'
       },
       update: {
-        title: '업데이트 확인',
-        queryFailed: '버전 확인 실패',
-        updateFailed: '업데이트 실패, 재시도하세요.',
-        isLatest: '이미 최신 버전입니다.',
-        available: '업데이트가 가능합니다. 정말로 업데이트 할까요?',
-        updating: '업데이트 시작. 잠시 기다려주세요...',
-        confirm: '확인',
-        cancel: '취소'
+        title: 'Check for Updates',
+        queryFailed: 'Get version failed',
+        updateFailed: 'Update failed. Please retry.',
+        isLatest: 'You already have the latest version.',
+        available: 'An update is available. Are you sure you want to update now?',
+        updating: 'Update started. Please wait...',
+        confirm: 'Confirm',
+        cancel: 'Cancel',
+        preview: 'Preview Updates',
+        previewDesc: 'Get early access to new features and improvements',
+        previewTip:
+          'Please be aware that preview releases may contain bugs or incomplete functionality!'
       },
       account: {
         title: '계정',
-        webAccount: 'Web 계정',
+        webAccount: 'Web Account Name',
         password: '비밀번호',
-        updateBtn: '업데이트',
-        logoutBtn: '로그아웃'
+        updateBtn: 'Change',
+        logoutBtn: 'Logout',
+        logoutDesc: 'Are you sure you want to logout?',
+        okBtn: 'Yes',
+        cancelBtn: 'No'
       }
     },
     error: {
-      title: '문제가 발생했습니다.',
-      refresh: '새로고침'
+      title: "We've ran into an issue",
+      refresh: 'Refresh'
+    },
+    fullscreen: {
+      toggle: 'Toggle Fullscreen'
+    },
+    menu: {
+      collapse: 'Collapse Menu',
+      expand: 'Expand Menu'
     }
   }
 };
